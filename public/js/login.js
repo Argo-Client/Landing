@@ -14,5 +14,6 @@ $("form").submit(e => {
         }
     }).then(d => {
         console.log(d)
+        location.pathname = "main"
     }).catch(console.error)
 })

@@ -12,6 +12,7 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "less-middleware": "~2.2.1",
+    "magister.js": "^2.0.0-alpha.13",
     "morgan": "~1.9.1",
     "puppeteer": "^5.2.1"
   }

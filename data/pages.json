@@ -1,7 +1,15 @@
 [
     {
-        "title": "Main",
+        "title": "Magistex - Free open source magister client",
         "url": "",
         "loc": "index"
+    },
+    {
+        "title": "Login - Magistex",
+        "url": "login"
+    },
+    {
+        "title": "Agenda - Magistex",
+        "url": "main"
     }
 ]

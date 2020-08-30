@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
+    <title>login.hbs</title>
     <link rel='stylesheet' href='/stylesheets/main.css' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,8 +19,32 @@
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
     </nav>
-    {{#block "body"}}
-    {{/block}}
+<link rel="stylesheet" href="/stylesheets/login.css">
+<div class="container center-content content">
+    <div class="z-depth-1 grey darken-4 row login">
+        <form class="col s12" method="post">
+            
+            <div class='row'>
+                <div class='input-field'>
+                    <input class='validate white-text' type='text' id='user'>
+                    <label for='user'>Gebruikersnaam</label>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='input-field'>
+                    <input class='validate white-text' type='password' name='password' id='password' />
+                    <label for='password'>Wachtwoord</label>
+                </div>
+            </div>
+            <br>
+            <center>
+                <div class='row'>
+                    <button type='submit' class='btn btn-large waves-effect primary'>Login</button>
+                </div>
+            </center>
+        </form>
+    </div>
+</div>
     
     <footer class="page-footer grey darken-4">
       <div class="container">
@@ -32,24 +56,6 @@
     
     
           </div>
-          {{!-- <div class="col l3 s12">
-            <h5 class="white-text">Settings</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Connect</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-          </div> --}}
         </div>
       </div>
       <div class="footer-copyright">

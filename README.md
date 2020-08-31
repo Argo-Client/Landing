@@ -8,10 +8,10 @@ See it in action: https://magistex.g-vm.nl
 ```
 git clone https://github.com/Netfloex/Magistex.git
 cd Magistex
-npm install
-npm start
+npm run firstrun
 ```
-Server should be running on localhost:3000
+Backend server should be running on localhost:3000
+You need to host the /public directory yourself
 ## Built With
 
 * [Materialize](https://materializecss.com) - CSS framework used

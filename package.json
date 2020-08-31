@@ -3,18 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node index.js",
+    "compile": "node bin/compileAll.js",
+    "watch": "node bin/watchChanges.js",
+    "firstrun": "npm install && npm run compile && npm run start"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
+    "axios": "^0.20.0",
+    "cors": "^2.8.5",
     "express": "~4.16.1",
     "handlebars-layouts": "^3.1.4",
     "hbs": "~4.0.4",
-    "http-errors": "~1.6.3",
-    "less-middleware": "~2.2.1",
-    "magister.js": "^2.0.0-alpha.13",
-    "morgan": "~1.9.1",
-    "puppeteer": "^5.2.1"
+    "less": "^3.12.2",
+    "magister.js": "^2.0.0-alpha.13"
   }
 }

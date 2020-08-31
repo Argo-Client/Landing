@@ -1,10 +1,17 @@
-{{#extend "layout"}}
+{{#extend "layout" title="Login - Magistex"}}
+{{#content "head"}}
+<link rel="stylesheet" href="/css/login.css">
+{{/content}}
+{{#content "scripts"}}
+<script src="/js/login.js"></script>
+{{/content}}
 {{#content "body"}}
-<link rel="stylesheet" href="/stylesheets/login.css">
+
 <div class="container center-content content">
     <div class="z-depth-1 grey darken-4 row login">
+        <h5 class="white-text">Login</h5>
+        <p class="deep-orange-text accent-4" id="errorMsg"></p>
         <form class="col s12" method="post">
-            {{error}}
             <div class='row'>
                 <div class='input-field'>
                     <input class='validate white-text' type='text' id='user'>

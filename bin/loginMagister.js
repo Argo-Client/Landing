@@ -1,7 +1,16 @@
 const {default: magister} = require("magister.js")
 const {readFileSync} = require("fs")
-const {refreshCode} = require("./getAuthCode")
-var authCode = readFileSync(__dirname+"/../data/authcode").toString()
+const axios = require("axios")
+const { error } = require("console")
+var authCode
+async function getCode() {
+    var d = (await axios("https://authcode.samtaen.nl/")).data
+    authCode = d.code
+    console.log("Authcode: "+d.code);
+    return d.code
+
+}
+getCode()
 module.exports.checkCredentials = function (data) {
     var user = data.user
     var pass = data.password
@@ -22,11 +31,11 @@ module.exports.checkCredentials = function (data) {
             })
         }).catch(err => {
             if (err.toString().match("AuthCodeValidation")) {
-                refreshCode()
+                getCode()
                 rej("Magister heeft de authCode veranderd, dit programma laad hem nu opnieuw op, probeer opnieuw over een aantal seconden. (Als je dit alleen maar krijgt heeft iddink iets verpest)")
             } else {
                 console.error(err);
-                rej(true)
+                rej(err.toString())
             }
         })
     })

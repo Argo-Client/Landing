@@ -61,3 +61,5 @@ typings/
 .next
 public/*
 !public/js*
+!public/img*
+!public/*.ico

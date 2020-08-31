@@ -1,3 +1,5 @@
+<p align="center"><img src="public/img/magistex.png" width="400"></p>
+
 # Magistex
 
 Magistex is a Magister 6 application built with material design. 

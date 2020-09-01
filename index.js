@@ -8,7 +8,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors())
 app.post("/api/login", (req, res) => {
-    console.log(req.body);
     checkCredentials(req.body).then(d => {
         res.json(d)
     }).catch(err => {

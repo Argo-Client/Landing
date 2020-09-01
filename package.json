@@ -15,6 +15,6 @@
     "handlebars-layouts": "^3.1.4",
     "hbs": "~4.0.4",
     "less": "^3.12.2",
-    "magister.js": "^2.0.0-alpha.13"
+    "magister-openid": "^0.1.5"
   }
 }

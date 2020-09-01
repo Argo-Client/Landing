@@ -13,6 +13,10 @@ $("form").submit(e => {
         password: $("#password").val()
     }).then(d => {
         console.log(d)
+        var data = d.data
+        localStorage.setItem("magisterData",JSON.stringify(data))
+        $("#errorMsg").text("Ingelogd, je word doorgestuurd")
+        $("#errorMsg").addClass("green-text").removeClass("deep-orange-text")
         location.pathname = "main"
     }).catch(err=> {
         console.error(err);
@@ -20,13 +24,14 @@ $("form").submit(e => {
             var error = err.response.data
             if (error.match("InvalidUsername")) {
                 $("#user").addClass("invalid").focus()
-                $("#errorMsg").text("Verkeerde gebruikersnaam")
+                $("#errorMsg").text("Gebruikersnaam is incorrect")
             } else if (error.match("split")) {
                 $("#password").addClass("invalid").focus()
-                $("#errorMsg").text("Verkeerd wachtwoord")
+                $("#errorMsg").text("Wachtwoord is incorrect")
             }
             else {
                 console.log(error);
+                $("#errorMsg").text(error)
             }
         }
     })

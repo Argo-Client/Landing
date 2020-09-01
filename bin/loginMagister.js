@@ -1,12 +1,10 @@
-const {default: magister} = require("magister.js")
-const {readFileSync} = require("fs")
+const { AuthManager } = require("magister-openid")
 const axios = require("axios")
-const { error } = require("console")
 var authCode
 async function getCode() {
     var d = (await axios("https://authcode.samtaen.nl/")).data
     authCode = d.code
-    console.log("Authcode: "+d.code);
+    console.log("Authcode: " + d.code);
     return d.code
 
 }
@@ -15,20 +13,13 @@ module.exports.checkCredentials = function (data) {
     var user = data.user
     var pass = data.password
     return new Promise((res, rej) => {
-        if (user.length<=2&&pass.length<=2) {
+        if (user.length <= 2 && pass.length <= 2) {
             rej("Error: please enter more characters")
         }
-        var opt = {
-            school: { url: "https://pantarijn.magister.net" },
-            username: user,
-            password: pass,
-            authCode
-        }
-        magister(opt).then(m => {
-            res({
-                profiel: m.profileInfo,
-                tokenSet: m.authManager.tokenSet
-            })
+        var manager = new AuthManager("pantarijn.magister.net")
+        
+        manager.login(user, pass, authCode).then(token => {
+            res(token)
         }).catch(err => {
             if (err.toString().match("AuthCodeValidation")) {
                 getCode()
@@ -38,5 +29,10 @@ module.exports.checkCredentials = function (data) {
                 rej(err.toString())
             }
         })
+        // magister(opt).then(m => {
+        //     res({
+        //         profiel: m.profileInfo,
+        //         tokenSet: m.authManager.tokenSet
+        //     })
     })
 }

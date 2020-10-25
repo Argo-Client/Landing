@@ -1,0 +1,5 @@
+{
+    "compile-hero.disable-compile-files-on-did-save-code": false,
+    "compile-hero.javascript-output-directory": "../public/dist",
+    "compile-hero.sass-output-directory": "../public/dist"
+}

@@ -1,0 +1,21 @@
+@import "src/materialize";
+@import "src/notfound";
+
+.icon-block {
+    padding: 0 15px;
+
+    .material-icons {
+        font-size: inherit;
+    }
+}
+
+.logo {
+    height: 100%;
+    user-select: none;
+    // pointer-events: none;
+}
+
+.page {
+    // Is even tijdelijk
+    height: calc(100vh - 64px);
+}

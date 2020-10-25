@@ -1,0 +1,14 @@
+{
+    "/": {
+        "title": "Argo | Home",
+        "doc": "index"
+    },
+    "download": {
+        "title": "Argo | Download",
+        "doc": "download"
+    },
+    "notFound": {
+        "title": "Argo | Niet gevonden",
+        "doc": "notFound"
+    }
+}

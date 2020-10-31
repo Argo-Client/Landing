@@ -10,6 +10,8 @@ function jPath($str) {
     return realpath(getcwd() . "/../" . $str);
 }
 $paths = json_decode(file_get_contents(jPath("config/paths.json")));
+
+$keywords = json_decode(file_get_contents(jPath("config/keywords.json")));
 include jPath("bin/routing.php");
 ?>
 
